@@ -825,20 +825,27 @@ button {
 
 #logs {
 
-
     height:200px;
-
 
     text-align:center;
 
-
     color:#00cc55;
-
 
     overflow-y:auto;
 
+    scrollbar-width:none; /* Firefox */
 
 }
+
+
+/* Убираем белую полосу Chrome/Edge */
+
+#logs::-webkit-scrollbar {
+
+    display:none;
+
+}
+
 
 
 
