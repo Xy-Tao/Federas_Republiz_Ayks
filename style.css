@@ -11,6 +11,7 @@ body {
 }
 
 
+
 /* =========================
    ШАПКА САЙТА
 ========================= */
@@ -29,6 +30,7 @@ header {
 }
 
 
+
 header h1 {
 
     margin:0;
@@ -36,6 +38,7 @@ header h1 {
     font-size:36px;
 
 }
+
 
 
 header p {
@@ -89,6 +92,8 @@ nav a:hover {
 
 
 
+
+
 /* =========================
    ОСНОВНОЙ КОНТЕНТ
 ========================= */
@@ -103,6 +108,8 @@ main {
     padding:20px;
 
 }
+
+
 
 
 
@@ -147,8 +154,10 @@ main {
 
 
 
+
+
 /* =========================
-   ЗАГОЛОВКИ РАЗДЕЛОВ
+   ЗАГОЛОВКИ
 ========================= */
 
 
@@ -161,6 +170,8 @@ main {
     font-size:30px;
 
 }
+
+
 
 
 
@@ -245,8 +256,10 @@ main {
 
 
 
+
+
 /* =========================
-   НОВЫЙ ФУТЕР
+   ФУТЕР
 ========================= */
 
 
@@ -268,11 +281,11 @@ main {
 
 
 
-/* =========================
-   СТРАНИЦЫ ВИКИ
-   (НЕ УДАЛЯТЬ)
-========================= */
 
+
+/* =========================
+   ВИКИ СТРАНИЦЫ
+========================= */
 
 
 .container {
@@ -343,6 +356,8 @@ main {
 
 
 
+
+
 /* =========================
    КНОПКИ
 ========================= */
@@ -361,6 +376,8 @@ button {
     border-radius:6px;
 
 }
+
+
 
 
 
@@ -414,11 +431,16 @@ button {
 }
 
 
+
 .changelog-list .card {
 
     margin-bottom:25px;
 
 }
+
+
+
+
 
 /* =========================
    FEDERATION BOOT SYSTEM
@@ -451,7 +473,22 @@ button {
 
 
 
+
+
+/* Убираем возможные полосы браузера */
+
+html {
+
+    overflow:hidden;
+
+}
+
+
+
+
+
 /* Сетка терминала */
+
 
 .loading-page::before {
 
@@ -465,16 +502,26 @@ button {
 
     background-image:
 
-    linear-gradient(
-    90deg,
-    rgba(0,255,100,0.08) 1px,
-    transparent 1px
-    ),
 
     linear-gradient(
-    0deg,
+
+    90deg,
+
     rgba(0,255,100,0.08) 1px,
+
     transparent 1px
+
+    ),
+
+
+    linear-gradient(
+
+    0deg,
+
+    rgba(0,255,100,0.08) 1px,
+
+    transparent 1px
+
     );
 
 
@@ -488,6 +535,8 @@ button {
 
 
 }
+
+
 
 
 
@@ -514,6 +563,8 @@ button {
 
 
 
+
+
 /* Окно терминала */
 
 
@@ -523,7 +574,15 @@ button {
     width:750px;
 
 
+    max-width:90vw;
+
+
+    box-sizing:border-box;
+
+
+
     padding:45px;
+
 
 
     background:
@@ -531,9 +590,11 @@ button {
     rgba(5,8,5,0.92);
 
 
+
     border:
 
     1px solid #00ff66;
+
 
 
     box-shadow:
@@ -559,8 +620,9 @@ button {
     animation:terminalOpen 1.5s ease;
 
 
-
 }
+
+
 
 
 
@@ -591,6 +653,8 @@ button {
 
 
 }
+
+
 
 
 
@@ -673,6 +737,7 @@ button {
 
 
 
+
 /* Временная эмблема */
 
 
@@ -697,10 +762,11 @@ button {
 
 
 
+
 @keyframes pulse {
 
 
-    0% {
+    0%,100% {
 
 
         opacity:0.5;
@@ -723,24 +789,15 @@ button {
     }
 
 
-
-    100% {
-
-
-        opacity:0.5;
-
-        transform:scale(0.95);
-
-
-    }
-
-
 }
 
 
 
 
 
+
+
+/* Вращающийся символ */
 
 
 .spinner {
@@ -769,23 +826,20 @@ button {
 
     from {
 
-
         transform:rotate(0deg);
-
 
     }
 
 
     to {
 
-
         transform:rotate(360deg);
-
 
     }
 
 
 }
+
 
 
 
@@ -822,32 +876,26 @@ button {
 
 
 
+
 /* Логи */
 
 
 #logs {
 
-    height:200px;
+
+    height:220px;
+
 
     text-align:center;
 
+
     color:#00cc55;
 
-    overflow-y:auto;
 
-    scrollbar-width:none; /* Firefox */
+    overflow:hidden;
+
 
 }
-
-
-/* Убираем белую полосу Chrome/Edge */
-
-#logs::-webkit-scrollbar {
-
-    display:none;
-
-}
-
 
 
 
@@ -860,6 +908,7 @@ button {
 
 
 }
+
 
 
 
@@ -900,7 +949,7 @@ button {
 
 
 
-/* Прогресс */
+/* Полоса загрузки */
 
 
 .progress-box {
@@ -960,53 +1009,113 @@ button {
 
 }
 
+
+
+
+
+
+
+/* Системные данные */
+
+
 .system-data {
 
 
-margin-top:25px;
+    margin-top:25px;
 
 
-font-size:14px;
+    font-size:14px;
 
 
-text-align:left;
+    text-align:left;
 
 
-color:#008f3d;
+    color:#008f3d;
 
 
-line-height:1.8;
+    line-height:1.8;
 
 
-opacity:0.8;
+    opacity:0.8;
 
 
-animation:dataPulse 3s infinite;
+    animation:dataPulse 3s infinite;
 
 
 }
+
+
+
 
 
 
 @keyframes dataPulse {
 
 
-0%,100% {
+    0%,100% {
 
 
-opacity:0.5;
+        opacity:0.5;
+
+
+    }
+
+
+
+    50% {
+
+
+        opacity:1;
+
+
+    }
 
 
 }
 
 
-50% {
 
 
-opacity:1;
+
+/* Мобильная адаптация загрузчика */
 
 
-}
+@media(max-width:700px){
+
+
+    .terminal {
+
+
+        padding:25px;
+
+    }
+
+
+
+    .terminal h1 {
+
+
+        font-size:22px;
+
+    }
+
+
+
+    .fake-emblem {
+
+
+        font-size:60px;
+
+    }
+
+
+
+    .spinner {
+
+
+        font-size:32px;
+
+    }
 
 
 }
