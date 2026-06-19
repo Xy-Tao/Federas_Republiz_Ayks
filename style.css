@@ -401,3 +401,21 @@ button {
 
 
 }
+
+/* =========================
+   ЖУРНАЛ ОБНОВЛЕНИЙ
+========================= */
+
+
+.changelog-list {
+
+    margin-top:40px;
+
+}
+
+
+.changelog-list .card {
+
+    margin-bottom:25px;
+
+}
