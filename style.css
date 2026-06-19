@@ -1,33 +1,65 @@
 body {
 
-background:#0d1117;
+    background:#0d1117;
 
-color:white;
+    color:white;
 
-font-family:Arial;
+    font-family:Arial, sans-serif;
 
-margin:0;
+    margin:0;
 
 }
+
+
+/* =========================
+   ШАПКА САЙТА
+========================= */
 
 
 header {
 
-text-align:center;
+    text-align:center;
 
-padding:40px;
+    padding:50px 20px;
 
-background:#161b22;
+    background:#161b22;
+
+    border-bottom:1px solid #30363d;
+
+}
+
+
+header h1 {
+
+    margin:0;
+
+    font-size:36px;
+
+}
+
+
+header p {
+
+    color:#8b949e;
+
+    font-size:18px;
 
 }
 
 
 
+/* =========================
+   НАВИГАЦИЯ
+========================= */
+
+
 nav {
 
-padding:15px;
+    padding:20px;
 
-text-align:center;
+    text-align:center;
+
+    background:#0d1117;
 
 }
 
@@ -35,43 +67,115 @@ text-align:center;
 
 nav a {
 
-color:#58a6ff;
+    color:#58a6ff;
 
-margin:15px;
+    margin:0 15px;
 
-text-decoration:none;
+    text-decoration:none;
+
+    font-size:18px;
+
+    transition:0.3s;
 
 }
 
+
+
+nav a:hover {
+
+    color:white;
+
+}
+
+
+
+/* =========================
+   ОСНОВНОЙ КОНТЕНТ
+========================= */
 
 
 main {
 
-max-width:1200px;
+    max-width:1200px;
 
-margin:auto;
+    margin:auto;
+
+    padding:20px;
 
 }
 
+
+
+/* =========================
+   ВСТУПИТЕЛЬНЫЙ БЛОК
+========================= */
 
 
 .intro {
 
-padding:30px;
+    padding:40px;
 
-text-align:center;
+    text-align:center;
+
+    background:#161b22;
+
+    border-radius:12px;
+
+    border:1px solid #30363d;
 
 }
 
 
 
+.intro h2 {
+
+    font-size:30px;
+
+}
+
+
+
+.intro p {
+
+    color:#c9d1d9;
+
+    font-size:18px;
+
+    line-height:1.6;
+
+}
+
+
+
+/* =========================
+   ЗАГОЛОВКИ РАЗДЕЛОВ
+========================= */
+
+
+.section-title {
+
+    text-align:center;
+
+    margin:50px 0 30px;
+
+    font-size:30px;
+
+}
+
+
+
+/* =========================
+   КАРТОЧКИ
+========================= */
+
+
 .catalog {
 
-display:grid;
+    display:grid;
 
-grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(3,1fr);
 
-gap:20px;
+    gap:25px;
 
 }
 
@@ -79,11 +183,45 @@ gap:20px;
 
 .card {
 
-background:#161b22;
+    background:#161b22;
 
-padding:25px;
+    padding:25px;
 
-border-radius:10px;
+    border-radius:12px;
+
+    border:1px solid #30363d;
+
+    transition:0.3s;
+
+}
+
+
+
+.card:hover {
+
+    transform:translateY(-6px);
+
+    border-color:#58a6ff;
+
+}
+
+
+
+.card h3 {
+
+    margin-top:0;
+
+    font-size:22px;
+
+}
+
+
+
+.card p {
+
+    color:#c9d1d9;
+
+    line-height:1.5;
 
 }
 
@@ -91,78 +229,175 @@ border-radius:10px;
 
 .card a {
 
-color:#58a6ff;
+    color:#58a6ff;
+
+    text-decoration:none;
 
 }
 
 
 
+.card a:hover {
 
-footer {
-
-position:fixed;
-
-bottom:0;
-
-width:100%;
-
-background:#161b22;
-
-padding:15px;
-
-display:flex;
-
-justify-content:center;
-
-gap:30px;
+    color:white;
 
 }
 
 
 
-button, footer a {
+/* =========================
+   НОВЫЙ ФУТЕР
+========================= */
 
-background:none;
 
-color:white;
+.site-footer {
 
-border:1px solid #58a6ff;
+    margin-top:60px;
 
-padding:10px;
+    padding:30px;
 
-text-decoration:none;
+    text-align:center;
+
+    background:#161b22;
+
+    color:#8b949e;
+
+    border-top:1px solid #30363d;
 
 }
+
+
+
+/* =========================
+   СТРАНИЦЫ ВИКИ
+   (НЕ УДАЛЯТЬ)
+========================= */
+
 
 
 .container {
-    display: flex;
-    min-height: 100vh;
+
+    display:flex;
+
+    min-height:100vh;
+
 }
+
+
 
 .sidebar {
-    width: 280px;
-    background: #161b22;
-    padding: 20px;
+
+    width:280px;
+
+    background:#161b22;
+
+    padding:20px;
+
+    flex-shrink:0;
+
 }
+
+
 
 .sidebar h2 {
-    margin-top: 0;
+
+    margin-top:0;
+
 }
+
+
 
 .sidebar a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 8px;
-    margin-bottom: 4px;
+
+    display:block;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:10px;
+
+    margin-bottom:5px;
+
+    border-radius:6px;
+
 }
+
+
 
 .sidebar a:hover {
-    background: #1f2937;
+
+    background:#1f2937;
+
 }
 
+
+
 .content {
-    flex: 1;
-    padding: 30px;
+
+    flex:1;
+
+    padding:30px;
+
+}
+
+
+
+/* =========================
+   КНОПКИ
+========================= */
+
+
+button {
+
+    background:none;
+
+    color:white;
+
+    border:1px solid #58a6ff;
+
+    padding:10px 15px;
+
+    border-radius:6px;
+
+}
+
+
+
+/* =========================
+   АДАПТАЦИЯ
+========================= */
+
+
+@media(max-width:900px){
+
+
+    .catalog {
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .container {
+
+        flex-direction:column;
+
+    }
+
+
+    .sidebar {
+
+        width:auto;
+
+    }
+
+
+    header h1 {
+
+        font-size:28px;
+
+    }
+
+
 }
