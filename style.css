@@ -835,7 +835,7 @@ button {
     color:#00cc55;
 
 
-    overflow:hidden;
+    overflow-y:auto;
 
 
 }
