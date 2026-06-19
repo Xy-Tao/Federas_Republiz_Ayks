@@ -447,6 +447,15 @@ button {
 ========================= */
 
 
+html,
+body {
+
+    overflow-x:hidden;
+
+}
+
+
+
 .loading-page {
 
     background:#020402;
@@ -475,8 +484,6 @@ button {
 
 
 
-/* Убираем возможные полосы браузера */
-
 body.loading-page {
 
     overflow:hidden;
@@ -504,24 +511,16 @@ body.loading-page {
 
 
     linear-gradient(
-
     90deg,
-
     rgba(0,255,100,0.08) 1px,
-
     transparent 1px
-
     ),
 
 
     linear-gradient(
-
     0deg,
-
     rgba(0,255,100,0.08) 1px,
-
     transparent 1px
-
     );
 
 
@@ -564,7 +563,6 @@ body.loading-page {
 
 
 
-
 /* Окно терминала */
 
 
@@ -577,11 +575,14 @@ body.loading-page {
     max-width:90vw;
 
 
+    max-height:85vh;
+
+
     box-sizing:border-box;
 
 
 
-    padding:45px;
+    padding:30px;
 
 
 
@@ -591,9 +592,7 @@ body.loading-page {
 
 
 
-    border:
-
-    1px solid #00ff66;
+    border:1px solid #00ff66;
 
 
 
@@ -621,7 +620,6 @@ body.loading-page {
 
 
 }
-
 
 
 
@@ -660,7 +658,7 @@ body.loading-page {
 
 
 
-/* Сканирующая линия */
+/* Сканирование */
 
 
 .terminal::after {
@@ -716,14 +714,12 @@ body.loading-page {
 
     0% {
 
-
         top:-100%;
 
     }
 
 
     100% {
-
 
         top:120%;
 
@@ -738,25 +734,23 @@ body.loading-page {
 
 
 
-/* Временная эмблема */
-
-
 .fake-emblem {
 
 
-    font-size:90px;
+    font-size:70px;
 
 
     color:#00ff66;
 
 
-    margin-bottom:20px;
+    margin-bottom:10px;
 
 
     animation:pulse 3s infinite;
 
 
 }
+
 
 
 
@@ -797,16 +791,13 @@ body.loading-page {
 
 
 
-/* Вращающийся символ */
-
-
 .spinner {
 
 
-    font-size:45px;
+    font-size:35px;
 
 
-    margin:30px;
+    margin:15px;
 
 
     color:#00ff66;
@@ -816,6 +807,8 @@ body.loading-page {
 
 
 }
+
+
 
 
 
@@ -845,17 +838,17 @@ body.loading-page {
 
 
 
-
 .terminal h1 {
 
 
     color:#00ff66;
 
 
-    font-size:28px;
+    font-size:26px;
 
 
 }
+
 
 
 
@@ -877,13 +870,10 @@ body.loading-page {
 
 
 
-/* Логи */
-
-
 #logs {
 
 
-    height:220px;
+    height:140px;
 
 
     text-align:center;
@@ -901,10 +891,12 @@ body.loading-page {
 
 
 
+
+
 #logs p {
 
 
-    animation:appear 1s ease;
+    animation:appear 0.8s ease;
 
 
 }
@@ -920,22 +912,18 @@ body.loading-page {
 
     from {
 
-
         opacity:0;
 
-        transform:translateY(15px);
-
+        transform:translateY(10px);
 
     }
 
 
     to {
 
-
         opacity:1;
 
         transform:translateY(0);
-
 
     }
 
@@ -948,17 +936,13 @@ body.loading-page {
 
 
 
-
-/* Полоса загрузки */
-
-
 .progress-box {
 
 
-    height:18px;
+    height:16px;
 
 
-    margin-top:25px;
+    margin-top:15px;
 
 
     background:#001a08;
@@ -995,16 +979,17 @@ body.loading-page {
 
 
 
+
 #status {
 
 
-    margin-top:20px;
+    margin-top:15px;
 
 
     color:#00ff66;
 
 
-    font-size:18px;
+    font-size:16px;
 
 
 }
@@ -1014,17 +999,13 @@ body.loading-page {
 
 
 
-
-/* Системные данные */
-
-
 .system-data {
 
 
-    margin-top:25px;
+    margin-top:10px;
 
 
-    font-size:14px;
+    font-size:13px;
 
 
     text-align:left;
@@ -1033,7 +1014,7 @@ body.loading-page {
     color:#008f3d;
 
 
-    line-height:1.8;
+    line-height:1.6;
 
 
     opacity:0.8;
@@ -1049,25 +1030,21 @@ body.loading-page {
 
 
 
+
 @keyframes dataPulse {
 
 
     0%,100% {
 
-
         opacity:0.5;
 
-
     }
-
 
 
     50% {
 
-
         opacity:1;
 
-
     }
 
 
@@ -1077,59 +1054,20 @@ body.loading-page {
 
 
 
-/* Мобильная адаптация загрузчика */
 
 
-@media(max-width:700px){
-
-
-    .terminal {
-
-
-        padding:25px;
-
-    }
-
-
-
-    .terminal h1 {
-
-
-        font-size:22px;
-
-    }
-
-
-
-    .fake-emblem {
-
-
-        font-size:60px;
-
-    }
-
-
-
-    .spinner {
-
-
-        font-size:32px;
-
-    }
-
-
-}
-
-/* =========================
-   КНОПКА ПРОПУСКА ЗАГРУЗКИ
-========================= */
+/* КНОПКА ПРОПУСКА */
 
 
 .skip-block {
 
-    margin-top:25px;
+
+    margin-top:15px;
+
 
 }
+
+
 
 
 
@@ -1138,17 +1076,24 @@ body.loading-page {
 
     background:transparent;
 
+
     color:#00ff66;
+
 
     border:1px solid #00ff66;
 
-    padding:12px 25px;
+
+    padding:8px 20px;
+
 
     font-family:monospace;
 
-    font-size:16px;
+
+    font-size:14px;
+
 
     cursor:pointer;
+
 
     transition:0.3s;
 
@@ -1157,16 +1102,61 @@ body.loading-page {
 
 
 
+
+
 #skip-loader:hover {
 
 
     background:#00ff66;
 
+
     color:#020402;
+
 
     box-shadow:
 
     0 0 15px rgba(0,255,100,0.8);
 
 
+}
+
+
+
+
+
+@media(max-width:700px){
+
+
+    .terminal {
+
+        padding:20px;
+
+    }
+
+
+
+    .terminal h1 {
+
+        font-size:20px;
+
+    }
+
+
+
+    .fake-emblem {
+
+        font-size:50px;
+
+    }
+
+
+
+    .spinner {
+
+        font-size:28px;
+
+    }
+
+
+}
 }
