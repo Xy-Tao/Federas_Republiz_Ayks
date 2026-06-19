@@ -70,9 +70,11 @@ ARCHIVE STATUS: CONNECTED
 
 
 
+
 <div id="logs">
 
 </div>
+
 
 
 
@@ -84,12 +86,17 @@ ARCHIVE STATUS: CONNECTED
 
 
 
+
 <p id="status">
 
 Инициализация системы...
 
 </p>
-<!-- ПРОПУСК АКТИВАЦИИ СИСТЕМЫ -->
+
+
+
+
+<!-- ПРОПУСК АКТИВАЦИИ -->
 
 <div class="skip-block">
 
@@ -102,7 +109,11 @@ ARCHIVE STATUS: CONNECTED
 </div>
 
 
+
+
 </div>
+
+
 
 
 
@@ -112,6 +123,7 @@ ARCHIVE STATUS: CONNECTED
 
 
 const logs = [
+
 
 "Запуск центрального ядра........ OK",
 
@@ -131,7 +143,9 @@ const logs = [
 
 "Центральная система готова........ OK"
 
+
 ];
+
 
 
 
@@ -141,11 +155,14 @@ let progress = 0;
 
 
 
+
 const logBox = document.getElementById("logs");
 
 const bar = document.getElementById("progress");
 
 const status = document.getElementById("status");
+
+const skipButton = document.getElementById("skip-loader");
 
 
 
@@ -153,42 +170,29 @@ const status = document.getElementById("status");
 
 let loader = setInterval(()=>{
 
-// ПРОПУСК ЗАГРУЗКИ
 
 
-const skipButton = document.getElementById("skip-loader");
-
-
-skipButton.onclick = function(){
-
-
-    clearInterval(loader);
-
-
-    status.textContent =
-    "ACCESS GRANTED // MANUAL OVERRIDE";
-
-
-    window.location.href="archive.html";
-
-
-};
 if(current < logs.length){
 
 
-let line=document.createElement("p");
 
-line.textContent="> "+logs[current];
+let line = document.createElement("p");
+
+line.textContent = "> " + logs[current];
 
 
 logBox.appendChild(line);
 
+
 logBox.scrollTop = logBox.scrollHeight;
+
 
 
 current++;
 
+
 }
+
 
 
 
@@ -196,16 +200,19 @@ progress += Math.floor(Math.random()*10)+5;
 
 
 
-if(progress>=100){
+if(progress >= 100){
 
 
-progress=100;
+progress = 100;
 
 
 clearInterval(loader);
 
 
-status.textContent="ACCESS GRANTED // WELCOME TO FEDERATION ARCHIVE";
+
+status.textContent =
+"ACCESS GRANTED // WELCOME TO FEDERATION ARCHIVE";
+
 
 
 setTimeout(()=>{
@@ -217,19 +224,56 @@ window.location.href="archive.html";
 },2000);
 
 
+
 }
 
 
 
-bar.style.width=progress+"%";
+bar.style.width = progress+"%";
 
 
-status.textContent=
+
+status.textContent =
 "Загрузка данных: "+progress+"%";
 
 
 
 },2000);
+
+
+
+
+
+
+
+
+// РУЧНОЙ ПРОПУСК ЗАГРУЗКИ
+
+
+skipButton.addEventListener("click", function(){
+
+
+
+clearInterval(loader);
+
+
+
+status.textContent =
+"ACCESS GRANTED // MANUAL OVERRIDE";
+
+
+
+setTimeout(()=>{
+
+
+window.location.href="archive.html";
+
+
+},300);
+
+
+
+});
 
 
 
