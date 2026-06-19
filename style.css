@@ -427,7 +427,7 @@ button {
 
 .loading-page {
 
-background:#05070a;
+background:#020402;
 
 height:100vh;
 
@@ -439,19 +439,24 @@ align-items:center;
 
 font-family:monospace;
 
+color:#00ff66;
+
 }
+
 
 
 .terminal {
 
 
-width:700px;
+width:750px;
 
-padding:40px;
+padding:45px;
 
-background:#0d1117;
+background:#050805;
 
-border:1px solid #30363d;
+border:1px solid #00ff66;
+
+box-shadow:0 0 25px rgba(0,255,100,0.3);
 
 text-align:center;
 
@@ -464,9 +469,11 @@ text-align:center;
 
 font-size:90px;
 
-color:#58a6ff;
+color:#00ff66;
 
-animation:spin 5s linear infinite;
+margin-bottom:20px;
+
+animation:pulse 3s infinite;
 
 }
 
@@ -475,13 +482,13 @@ animation:spin 5s linear infinite;
 .spinner {
 
 
-font-size:40px;
+font-size:45px;
 
-color:#58a6ff;
+margin:30px;
 
-margin:25px;
+color:#00ff66;
 
-animation:spin 2s linear infinite;
+animation:spin 4s linear infinite;
 
 }
 
@@ -508,10 +515,57 @@ transform:rotate(360deg);
 
 
 
+@keyframes pulse {
+
+
+0% {
+
+opacity:0.5;
+
+transform:scale(0.95);
+
+}
+
+
+50% {
+
+opacity:1;
+
+transform:scale(1.05);
+
+}
+
+
+100% {
+
+opacity:0.5;
+
+transform:scale(0.95);
+
+}
+
+
+}
+
+
+
+.terminal h1 {
+
+
+color:#00ff66;
+
+font-size:28px;
+
+}
+
+
+
 .terminal h2 {
 
 
-color:#58a6ff;
+color:#00ff66;
+
+font-weight:normal;
 
 }
 
@@ -520,13 +574,47 @@ color:#58a6ff;
 #logs {
 
 
-height:180px;
+height:200px;
+
+text-align:center;
+
+color:#00cc55;
 
 overflow:hidden;
 
-text-align:left;
+}
 
-color:#8b949e;
+
+
+#logs p {
+
+
+animation:appear 0.8s ease;
+
+}
+
+
+
+@keyframes appear {
+
+
+from {
+
+opacity:0;
+
+transform:translateY(10px);
+
+}
+
+
+to {
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
 
 }
 
@@ -535,11 +623,13 @@ color:#8b949e;
 .progress-box {
 
 
-height:15px;
+height:18px;
 
-background:#161b22;
+margin-top:25px;
 
-border:1px solid #30363d;
+background:#001a08;
+
+border:1px solid #00ff66;
 
 }
 
@@ -550,11 +640,11 @@ border:1px solid #30363d;
 
 height:100%;
 
+background:#00ff66;
+
 width:0%;
 
-background:#58a6ff;
-
-transition:0.5s;
+transition:width 1s ease;
 
 }
 
@@ -563,8 +653,10 @@ transition:0.5s;
 #status {
 
 
-color:#58a6ff;
-
 margin-top:20px;
+
+color:#00ff66;
+
+font-size:18px;
 
 }
