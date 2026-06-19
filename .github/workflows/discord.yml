@@ -1,0 +1,32 @@
+name: А.И.Я System Discord Notification
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  discord:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Отправка уведомления в Discord
+        uses: tsickert/discord-webhook@v6.0.0
+        with:
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
+
+          embed-title: "🚀 А.И.Я SYSTEM UPDATE"
+
+          embed-description: |
+            Новое обновление Федерации Республик Аякса
+
+            👤 Разработчик:
+            ${{ github.actor }}
+
+            📁 Репозиторий:
+            ${{ github.repository }}
+
+            📝 Изменение:
+            ${{ github.event.head_commit.message }}
+
+          embed-footer-text: "Федерация Республик Аякса | GitHub Actions"
