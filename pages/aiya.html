@@ -130,6 +130,49 @@ return response.text();
 document.getElementById("aia-content").innerHTML = data;
 
 
+
+// изменение названия вкладки браузера
+
+
+let titles = {
+
+
+"main.html":
+"А.И.Я | Об агентстве",
+
+
+"departments.html":
+"А.И.Я | Отделы",
+
+
+"access_levels.html":
+"А.И.Я | Уровни доступа",
+
+
+"containment_levels.html":
+"А.И.Я | Уровни сдерживания",
+
+
+"protocols.html":
+"А.И.Я | Протоколы",
+
+
+"anomaly_classes.html":
+"А.И.Я | Классификация аномалий",
+
+
+"races.html":
+"А.И.Я | Расы"
+
+
+};
+
+
+
+document.title = titles[page] || "А.И.Я | Федерация Республик Аякса";
+
+
+
 })
 
 
