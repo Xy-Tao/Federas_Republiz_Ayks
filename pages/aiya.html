@@ -1,69 +1,164 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-  
 <head>
+
 <meta charset="UTF-8">
-<title>А.И.Я</title>
+
+<title>А.И.Я | Федерация Республик Аякса</title>
+
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+
 <link rel="stylesheet" href="../style.css">
+
 </head>
+
 
 <body>
 
+
 <div class="container">
+
+
 
 <div class="sidebar">
 
+
 <h2>🛡 А.И.Я</h2>
+
+
 
 <a href="../archive.html">
 Главная
 </a>
 
+
 <hr>
 
-<a href="aia/main.html">
+
+
+<a href="#" onclick="loadPage('main.html')">
 Об агентстве
 </a>
 
-<a href="aia/departments.html">
+
+
+<a href="#" onclick="loadPage('departments.html')">
 Отделы
 </a>
 
-<a href="aia/access_levels.html">
+
+
+<a href="#" onclick="loadPage('access_levels.html')">
 Уровни доступа
 </a>
 
-<a href="aia/containment_levels.html">
+
+
+<a href="#" onclick="loadPage('containment_levels.html')">
 Уровни сдерживания
 </a>
 
-<a href="aia/protocols.html">
+
+
+<a href="#" onclick="loadPage('protocols.html')">
 Протоколы
 </a>
 
-<a href="aia/anomaly_classes.html">
+
+
+<a href="#" onclick="loadPage('anomaly_classes.html')">
 Классификация аномалий
 </a>
 
-<a href="aia/races.html">
+
+
+<a href="#" onclick="loadPage('races.html')">
 Расы
 </a>
 
-</div>
 
-<div class="content">
-
-<h1>Аномальная Интеграционная Агенция</h1>
-
-<p>
-Главный орган контроля, изучения и
-сдерживания аномальных явлений.
-</p>
 
 </div>
 
+
+
+
+
+
+<div class="content" id="aia-content">
+
+
 </div>
+
+
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+function loadPage(page){
+
+
+fetch("aia/" + page)
+
+.then(response => {
+
+
+if(!response.ok){
+
+throw new Error("Ошибка загрузки");
+
+}
+
+
+return response.text();
+
+
+})
+
+
+.then(data => {
+
+
+document.getElementById("aia-content").innerHTML = data;
+
+
+})
+
+
+.catch(error => {
+
+
+document.getElementById("aia-content").innerHTML =
+
+"<h2>Ошибка загрузки данных</h2>";
+
+
+});
+
+
+}
+
+
+
+
+
+// загрузка главной страницы автоматически
+
+loadPage("main.html");
+
+
+
+</script>
+
+
 
 </body>
 
